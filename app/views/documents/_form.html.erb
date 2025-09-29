@@ -1,0 +1,18 @@
+<%= form_with(model: document, class: "grid gap-3 max-w-md") do |f| %>
+  <%= f.label :docname, "Název dokumentu" %>
+  <%= f.text_field :docname, class: "border p-2 rounded" %>
+
+  <%= f.label :valid_from, "Platnost od" %>
+  <%= f.date_field :valid_from, class: "border p-2 rounded" %>
+
+  <%= f.label :valid_to, "Platnost do" %>
+  <%= f.date_field :valid_to, class: "border p-2 rounded" %>
+
+  <%= f.label :description, "Popis" %>
+  <%= f.text_area :description, class: "border p-2 rounded" %>
+
+  <div class="flex gap-2">
+    <%= f.submit "Uložit", class: "px-3 py-2 bg-blue-600 text-white rounded" %>
+    <%= link_to "Zpět", documents_path, class: "px-3 py-2 border rounded" %>
+  </div>
+<% end %>
